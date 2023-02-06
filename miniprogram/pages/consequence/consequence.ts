@@ -18,13 +18,7 @@ Page({
 
   },
 
-  submit:function() {
-    wx.navigateTo({
-      url:"../consequence/consequence"
-    })
-  },
-
-  outTest:function() {
+  finish:function() {
     wx.navigateTo({
       url:"../index/index"
     })
