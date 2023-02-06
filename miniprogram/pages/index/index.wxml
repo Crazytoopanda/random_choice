@@ -1,0 +1,6 @@
+<view class='container'>
+  <view class='name'>桑侨选择</view>
+  <button class='start' bindtap="toChoice">
+    开始答题
+  </button>
+</view>
