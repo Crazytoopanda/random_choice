@@ -1,10 +1,10 @@
-import * as mode from "../../assets/data/questions.json"
+import questionJson from "../questions.js"
 Page({
   data: {
     questionList: [],
     allQuestions: []
   },
   onLoad() {
-    console.log(mode)
+    console.log(questionJson)
   }
 })
