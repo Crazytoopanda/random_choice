@@ -1,9 +1,10 @@
+import * as mode from "../../assets/data/questions.json"
 Page({
   data: {
     questionList: [],
-    allQuestion: []
+    allQuestions: []
   },
   onLoad() {
-    
+    console.log(mode)
   }
 })
