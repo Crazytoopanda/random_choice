@@ -1,4 +1,4 @@
-var json = {
+export default{
     "questions": [
         {
             "name": "中国共产党第二十次全国代表大会，是在全党全国各族人民迈上全面建设社会主义现代化国家新征程、向？？奋斗目标进军的关键时刻召开的一次十分重要的大会。",
@@ -900,8 +900,4 @@ var json = {
             ]
         }
     ]
-}
-
-module.exports = {
-  questionJson: json
 }

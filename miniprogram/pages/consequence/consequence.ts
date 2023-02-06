@@ -3,15 +3,17 @@ Page({
   data: {
     questionList: [],
     allQuestions: [],
-    answer: [
-      "A.我是本题答案A",
-      "B.我是本题答案B",
-      "C.我是本题答案C",
-      "D.我是本题答案D"
-    ]
+    rightAnswers: [],
+    currAnswers: [],
+    answerSet: []
   },
-  onLoad() {
-    console.log(questionJson)
+  onLoad(options: any) {
+    this.setData({
+      allQuestions: options["allQuestions"].split("||"),
+      rightAnswers: options["rightAnswers"].split(","),
+      currAnswers: options["currAnswers"].split(","),
+      answerSet: options["answerSet"].split(",")
+    })
   },
 
   radioChange() {
