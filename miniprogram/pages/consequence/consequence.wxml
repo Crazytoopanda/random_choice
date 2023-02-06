@@ -1,0 +1,33 @@
+<view class="container">
+
+<block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}}" class='choice'>
+  <view class="question">
+    <text style="font-size: 40rpx;">{{item+1}}.我是题目，很长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长。</text>
+  </view>
+
+  <view class="choice">
+  <block class="radio-group" bindchange="radioChange">
+    <label class="radio my-choosebox" wx:for="{{answer}}" wx:for-index="key"  wx:for-item="value"  >
+      <text value="{{key}}" checked="{{questionList[index].checked}}"/>{{value}}
+    </label>
+  </block>
+  </view>
+
+  <view class="answer">
+      <text class="answer-text wrong-answer" style="color: red;">
+        您的答案为E,
+      </text>
+      <text class="answer-text true-answer">
+        正确答案为A
+      </text>
+    </view>
+
+</block>
+
+<view class='return'>
+  <view class='mybutton'>
+    <button bindtap='finish' >完成答题</button>
+  </view>
+</view>
+
+</view>

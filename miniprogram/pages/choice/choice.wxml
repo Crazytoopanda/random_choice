@@ -2,8 +2,22 @@
 
   <block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}}" class='choice'>
     <view class="question">
-      <text style="font-size: 40rpx;">{{item+1}}.{{}}</text>
+      <text style="font-size: 40rpx;">{{item+1}}.我是题目，很长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长。</text>
     </view>
+    <view class="choice">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio my-choosebox" wx:for="{{answer}}" wx:for-index="key"  wx:for-item="value"  >
+        <radio value="{{key}}" checked="{{questionList[index].checked}}"/>{{value}}
+      </label>
+    </radio-group>
+  </view>
   </block>
+
+  <view class='submit'>
+    <view class='mybutton'>
+      <button bindtap='submit' >提交</button>
+      <text bindtap='outTest' class="toindex-btn">退出答题</text>
+    </view>
+  </view>
 
 </view>
