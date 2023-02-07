@@ -9,7 +9,14 @@ Page({
     answerLength: 10
   },
   currAnswers: <any>[],
-  onLoad() {
+  onShow() {
+    let question_list = <any>[]
+    for(let i = 0; i < this.data.answerLength; i++) {
+      question_list[i] = false
+    }
+    this.setData({
+      questionList: question_list
+    })
     function shuffle(arr: any) {
       let i = arr.length;
       while(i) {
@@ -39,13 +46,22 @@ Page({
   },
 
   submit:function() {
-    wx.navigateTo({
-      url:"../consequence/consequence?allQuestions=" + 
-        this.data.allQuestions.map((t) => t["name"]).join("||") + "&rightAnswers=" 
-        + this.data.rightAnswers.join(",")
-        + "&currAnswers=" + this.currAnswers.join(",")
-        + "&answerSet=" + this.data.answerSet.join(",")
-    })
+    if(this.currAnswers.flat().length == this.data.answerLength) {
+      wx.navigateTo({
+        url:"../consequence/consequence?allQuestions=" + 
+          this.data.allQuestions.map((t) => t["name"]).join("||") + "&rightAnswers=" 
+          + this.data.rightAnswers.join(",")
+          + "&currAnswers=" + this.currAnswers.join(",")
+          + "&answerSet=" + this.data.answerSet.join(",")
+      })
+    } else {
+      wx.showToast({
+        title: "请回答完所有题",
+        icon: "error",
+        duration: 2000
+      })
+    }
+    
   },
 
   outTest:function() {

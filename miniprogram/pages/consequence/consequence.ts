@@ -1,4 +1,5 @@
 import questionJson from "../questions.js"
+
 Page({
   data: {
     questionList: [],
@@ -24,5 +25,6 @@ Page({
     wx.navigateTo({
       url:"../index/index"
     })
+    wx.clearStorageSync()
   }
 })
