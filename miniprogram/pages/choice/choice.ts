@@ -6,7 +6,8 @@ Page({
     answerSet: [],
     questionList: [],
     allQuestions: [],
-    answerLength: 10
+    answerLength: 10,
+    backgroundPath: "../../data/20大2.jpg"
   },
   currAnswers: <any>[],
   onShow() {
@@ -61,7 +62,6 @@ Page({
         duration: 2000
       })
     }
-    
   },
 
   outTest:function() {

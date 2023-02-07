@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/choice/choice",
     "pages/consequence/consequence",
+    "pages/detail/detail",
     "pages/logs/logs"
     
   ],

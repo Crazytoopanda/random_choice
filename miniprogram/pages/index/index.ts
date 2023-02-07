@@ -1,6 +1,6 @@
 Page({
   data: {
-    
+    backgroundPath: "../../data/20大1.png"
   },
   onload() {
   }, 

@@ -1,5 +1,6 @@
-<view class='container'>
-  <view class='name'>桑侨选择</view>
+<view class='containers'>
+  <image src="../../data/20大1.png" mode="widthFix" style="height: 100%; width: 100%;" />
+  <view class='name'></view>
   <button class='start' bindtap="toChoice">
     开始答题
   </button>

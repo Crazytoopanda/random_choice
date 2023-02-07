@@ -1,41 +1,18 @@
-<view class="container">
-
-<block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}}" class='choice'>
-  <view class="question">
-    <text style="font-size: 40rpx;">{{item+1}}.{{allQuestions[item]}}</text>
+<view class="containers" style="background-image: url({{backgroundPath}}); background-attachment: fixed; background-size:contain; width: 100%;">
+  <view class='headss' style="text-align: center; padding-top: 450rpx;">
+      <view class="page-title">
+        答题结束！您的得分为:
+      </view>
+      <view class='page-score'>
+        <text class="score-num" >{{totalScore}}分</text>
+      </view>
+      <text class="score-remark">{{totalScore==100?remark[0]:(totalScore>=80?remark[1]:remark[2])}}</text>  
   </view>
-
-  <view class="choice">
-  <block class="radio-group" bindchange="radioChange">
-    <label class="radio my-choosebox" wx:for="{{[answerSet[item*4], answerSet[item*4+1], answerSet[item*4+2], answerSet[item*4+3]]}}" wx:for-index="key"  wx:for-item="value"  >
-      <text value="{{key}}" checked="{{questionList[index].checked}}"/>{{value}}
-    </label>
-  </block>
-  </view>
-
-  <view wx:if="{{currAnswers[item] != rightAnswers[item]}}" class="answer">
-      <text class="answer-text wrong-answer" style="color: red;">
-        您的答案为{{currAnswers[item]}},
-      </text>
-      <text class="answer-text true-answer">
-        正确答案为{{rightAnswers[item]}}
-      </text>
+  
+  <view class="footss">
+    <view>
+      <button type="default" bindtap="toView" hover-class="other-button-hover" class="wrong-btn"> 点击查看 </button>
+      <button type="default" bindtap="toIndex" hover-class="other-button-hover" class="wrong-btn"> 返回首页 </button>
     </view>
-  <view wx:else class="answer">
-      <text class="answer-text wrong-answer" style="color: green;">
-        您的答案为{{currAnswers[item]}},
-      </text>
-      <text class="answer-text true-answer">
-        正确答案为{{rightAnswers[item]}}
-      </text>
   </view>
-
-</block>
-
-<view class='return'>
-  <view class='mybutton'>
-    <button bindtap='finish' >完成答题</button>
-  </view>
-</view>
-
 </view>

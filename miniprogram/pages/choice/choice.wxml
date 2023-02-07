@@ -1,8 +1,8 @@
-<view class="container">
+<view class="containers" style="background-image: url({{backgroundPath}}); background-attachment: fixed; background-size:contain; width: 100%; background-blend-mode:overlay;">
 
-  <block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}}" class='choice'>
+  <block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}}" class='choices' >
     <view class="question">
-      <text style="font-size: 40rpx;">{{item+1}}.{{allQuestions[item]["name"]}}</text>
+      <text style="font-size: 40rpx; font">{{item+1}}. {{allQuestions[item]["name"]}}</text>
     </view>
     <view class="choice">
     <radio-group class="radio-group" bindchange="radioChange">
@@ -12,10 +12,9 @@
     </radio-group>
   </view>
   </block>
-
   <view class='submit'>
     <view class='mybutton'>
-      <button bindtap='submit' >提交</button>
+      <button bindtap='submit' style="border: medium, solid, aqua;">提交</button>
       <text bindtap='outTest' class="toindex-btn">退出答题</text>
     </view>
   </view>
